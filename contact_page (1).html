@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omega Drain Services | Professional South Florida Plumbing</title>
+    <style>
+        :root {
+            --primary: #0052cc;
+            --secondary: #00a3bf;
+            --dark: #172b4d;
+            --light: #f4f5f7;
+            --accent: #ffab00;
+            --text: #253858;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-banner {
+            background-color: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .top-banner span {
+            color: var(--accent);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo-area h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .badge-5star {
+            display: flex;
+            align-items: center;
+            background: #e6fcff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--secondary);
+        }
+
+        .badge-5star .stars {
+            color: var(--accent);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        .badge-5star .rating-text {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        /* Hero / Contact Layout Split */
+        .main-layout {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Info Card Styling */
+        .info-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cta-headline {
+            font-size: 2.2rem;
+            color: var(--dark);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .sub-headline {
+            font-size: 1.1rem;
+            color: #6b778c;
+            margin-bottom: 30px;
+        }
+
+        .phone-box {
+            background: linear-gradient(135deg, var(--primary), #0071e3);
+            color: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 35px;
+            box-shadow: 0 6px 20px rgba(0, 82, 204, 0.3);
+        }
+
+        .phone-box p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .phone-box a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 2.4rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        /* Standout Features / Selling Points */
+        .selling-points {
+            margin-top: 10px;
+        }
+
+        .point-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .point-icon {
+            background-color: #e6effc;
+            color: var(--primary);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .point-text h3 {
+            font-size: 1.05rem;
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .point-text p {
+            font-size: 0.95rem;
+            color: #42526e;
+        }
+
+        /* Hours & Form Card Styling */
+        .form-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+        }
+
+        /* Hours List Styling */
+        .hours-list {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--light);
+            font-size: 1rem;
+        }
+
+        .hours-row.current-day {
+            font-weight: 700;
+            color: var(--primary);
+            background-color: #f3f7fd;
+            padding-left: 8px;
+            padding-right: 8px;
+            border-radius: 4px;
+            border-bottom: 1px solid #bfdbfe;
+        }
+
+        .hours-day {
+            font-weight: 600;
+        }
+
+        .hours-time {
+            color: #42526e;
+        }
+        .hours-row.current-day .hours-time {
+            color: var(--primary);
+        }
+
+        /* Contact/Booking Form Elements */
+        .booking-form .form-group {
+            margin-bottom: 18px;
+        }
+
+        .booking-form label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--dark);
+        }
+
+        .booking-form input, .booking-form select, .booking-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dfe1e6;
+            border-radius: 6px;
+            background-color: #fafbfc;
+            font-size: 0.95rem;
+            color: var(--text);
+            transition: all 0.2s ease;
+        }
+
+        .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: var(--white);
+            box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.15);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--secondary);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 163, 191, 0.2);
+        }
+
+        .submit-btn:hover {
+            background-color: #008da5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #8993a4;
+            font-size: 0.85rem;
+            margin-top: 60px;
+            border-top: 1px solid #dfe1e6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Banner for Urgent Standout Feature -->
+    <div class="top-banner">
+        🚨 Emergency plumbing issues? We are on the way! <span>Quick response window active right now.</span>
+    </div>
+
+    <!-- Header containing Logo and visual Trust Signals -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <h1>Omega Drain Services</h1>
+            </div>
+            <!-- Trust Badge showing perfect 5.0 score explicitly requested -->
+            <div class="badge-5star">
+                <span class="stars">★★★★★</span>
+                <span class="rating-text">5.0 Rated (12 Verified Reviews)</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container Layout Split -->
+    <main class="main-layout">
+        
+        <!-- Left Column: Business Value, Numbers, and Standout Selling Details -->
+        <section class="info-card">
+            <div>
+                <h2 class="cta-headline">Expert Drain & Plumbing Solutions When You Need It Most</h2>
+                <p class="sub-headline">Serving home and business owners across South Florida with unmatched, crystal-clear reliability.</p>
+                
+                <!-- Explicitly Requested Contact Phone Block -->
+                <div class="phone-box">
+                    <p>Call Our Live Dispatch Line</p>
+                    <a href="tel:+12396899534">+1 (239) 689-9534</a>
+                </div>
+            </div>
+
+            <!-- Custom Built "Stand Out" Unique Selling Points based on Scraped Metadata -->
+            <div class="selling-points">
+                <div class="point-item">
+                    <div class="point-icon">✓</div>
+                    <div class="point-text">
+                        <h3>Accurate Issue Diagnosis</h3>
+                        <p>We find hidden leaks, root intrusions, and structural line blockages accurately before performing structural work.</p>
+                    </div>
+                </div>
+
+                <div class="point-item">
+                    <div class="point-icon">✓</div>
+                    <div class="point-text">
+                        <h3>Clear, Plain-Language Explanations</h3>
+                        <p>No industry jargon or hidden costs. We provide completely transparent price points before our wrenches touch a pipe.</p>
+                    </div>
+                </div>
+
+                <div class="point-item">
+                    <div class="point-icon">✓</div>
+                    <div class="point-text">
+                        <h3>Rapid Turnaround Window</h3>
+                        <p>Plumbing crises shouldn't wait. Our localized vehicle routing guarantees a prompt response time to mitigate water damage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Column: Business Hours Tracking & Interactive Intake Form -->
+        <section class="form-card">
+            <h2 class="section-title">Hours of Operation</h2>
+            
+            <!-- Precise Operation Hours from the Provided Input Image -->
+            <div class="hours-list">
+                <div class="hours-row" id="day-1">
+                    <span class="hours-day">Monday</span>
+                    <span class="hours-time">7:00 AM – 10:00 PM</span>
+                </div>
+                <div class="hours-row" id="day-2">
+                    <span class="hours-day">Tuesday</span>
+                    <span class="hours-time">7:00 AM – 10:00 PM</span>
+                </div>
+                <div class="hours-row" id="day-3">
+                    <span class="hours-day">Wednesday</span>
+                    <span class="hours-time">7:00 AM – 10:00 PM</span>
+                </div>
+                <div class="hours-row" id="day-4">
+                    <span class="hours-day">Thursday</span>
+                    <span class="hours-time">7:00 AM – 10:00 PM</span>
+                </div>
+                <div class="hours-row" id="day-5">
+                    <span class="hours-day">Friday</span>
+                    <span class="hours-time">7:00 AM – 10:00 PM</span>
+                </div>
+                <div class="hours-row" id="day-6">
+                    <span class="hours-day">Saturday</span>
+                    <span class="hours-time">7:00 AM – 10:00 PM</span>
+                </div>
+                <div class="hours-row" id="day-7">
+                    <span class="hours-day">Sunday</span>
+                    <span class="hours-time">7:00 AM – 5:00 PM</span>
+                </div>
+            </div>
+
+            <h2 class="section-title">Request Professional Service</h2>
+            <form class="booking-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Inbound service request captured successfully! (Pitch Prototype Mock)');">
+                <div class="form-group">
+                    <label for="client-name">Your Full Name</label>
+                    <input type="text" id="client-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="client-phone">Callback Phone Number</label>
+                    <input type="tel" id="client-phone" placeholder="(305) 555-0199" required>
+                </div>
+                <div class="form-group">
+                    <label for="issue-type">Primary Request Context</label>
+                    <select id="issue-type" required>
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="diagnosis">Comprehensive Issue Diagnosis</option>
+                        <option value="drain">Emergency Drain Cleaning & Clearing</option>
+                        <option value="repairs">General Plumbing Repairs</option>
+                        <option value="inspection">Camera Mainline Inspection</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="client-msg">Briefly Describe Your Issue</label>
+                    <textarea id="client-msg" rows="3" placeholder="Describe what needs attention (e.g. main line backup, slow kitchen drain)..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Priority Dispatch Request</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Omega Drain Services. All rights reserved. Managed Lead Portal Demo.
+    </footer>
+
+    <!-- Script to automatically highlight the current operational day dynamically for extra flair -->
+    <script>
+        try {
+            const daysMap = {1: 'day-1', 2: 'day-2', 3: 'day-3', 4: 'day-4', 5: 'day-5', 6: 'day-6', 0: 'day-7'};
+            const currentDayIndex = new Date().getDay();
+            const targetedElementId = daysMap[currentDayIndex];
+            if(targetedElementId) {
+                document.getElementById(targetedElementId).classList.add('current-day');
+            }
+        } catch(e) { console.error(e); }
+    </script>
+</body>
+</html>
